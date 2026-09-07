@@ -22,6 +22,7 @@
 \usepackage[utf8]{inputenc} % Codificación de entrada UTF-8
 \usepackage[T1]{fontenc}    % Codificación de salida para caracteres especiales
 \usepackage{graphicx}       % Manejo de gráficos
+\usepackage{tabularx}       % Tablas con columnas que ajustan el ancho al margen
 \usepackage{eso-pic}        % Permite agregar fondos
 \usepackage{hyperref}       % Manejo de hipervínculos y marcadores
 
@@ -77,7 +78,9 @@
 
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Agregar resumen al índice
-El resumen debe escribirse en uno o dos párrafos. Debe ser breve y conciso, sin ningún elemento de formato en el texto como itálicas o negritas. Tampoco se deben usar siglas ni acrónimos que no resulten obvios para un lector promedio de la memoria, ni referencias bibliográficas o notas al pie de página. No debe faltar qué es lo que se hizo/logró, qué importancia/valor tiene el proyecto/resultado, qué va a encontrar el lector en la memoria y qué contenidos de la especialización/maestría se aplicaron en el proyecto.
+En este trabajo se desarrolló un prototipo funcional de una máquina lanzapelotas de tenis portátil, un sistema embebido autónomo que asiste el entrenamiento de peloteo sin depender de un segundo jugador o de un entrenador. A partir de una versión anterior que había validado la idea general, pero con limitaciones de peso, autonomía y precisión, se rediseñaron los subsistemas mecánico y electrónico, y se desarrolló un firmware propio que coordina el lanzamiento, el posicionamiento y la alimentación de pelotas mediante una lógica de control por estados, segura ante fallas. El resultado es una plataforma más liviana, reproducible y de menor costo que las máquinas comerciales existentes, con una arquitectura preparada para incorporar visión por cámara e inteligencia artificial embebida en el futuro, de valor tanto para jugadores y entrenadores particulares como para instituciones deportivas con recursos acotados, entre ellas el club de tenis que participó como caso de aplicación.
+
+En la memoria se presenta la contextualización del problema y de las soluciones existentes, los objetivos y el alcance del proyecto, el diseño mecánico, electrónico y de firmware desarrollado, los ensayos realizados para validar el prototipo, y las conclusiones con las líneas de trabajo futuro. A lo largo del desarrollo se aplicaron contenidos de la maestría en sistemas embebidos: arquitecturas de firmware en capas, control de actuadores y sensores, uso de memoria no volátil, y planificación del proyecto mediante metodologías ágiles.
 \end{abstract}
 
 %----------------------------------------------------------------------------------------
