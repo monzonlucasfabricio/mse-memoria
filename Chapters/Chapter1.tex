@@ -26,12 +26,12 @@ Las máquinas lanzapelotas de tenis son equipos que permiten a un jugador practi
 
 Detrás de esta funcionalidad hay, en la mayoría de los casos, un sistema embebido: una combinación de hardware y software dedicada a controlar motores, leer sensores y coordinar el comportamiento del equipo de forma autónoma. Esta tecnología es la que permite que una máquina lanzapelotas regule la potencia y la dirección de cada disparo, detecte la presencia de pelotas y reaccione ante condiciones de falla sin intervención manual. El desarrollo de este tipo de sistemas involucra, además, restricciones propias del contexto deportivo, como la necesidad de portabilidad, de autonomía energética y de un costo razonable frente a equipos importados, lo que exige una arquitectura electrónica y de firmware pensada para operar de forma confiable en una cancha y no solo en un entorno de laboratorio.
 
-El presente trabajo se enmarca en este contexto, con el desarrollo de un prototipo funcional de máquina lanzapelotas de tenis portátil y autónoma. La figura~\ref{fig:contextoGeneral} ilustra, de manera esquemática, el lugar que ocupa el sistema desarrollado dentro de una sesión de entrenamiento típica, con el jugador, la cancha y la máquina como elementos principales del contexto de uso.
+El presente trabajo se enmarca en este contexto, con el desarrollo de un prototipo funcional de máquina lanzapelotas de tenis portátil y autónoma. La figura~\ref{fig:contextoGeneral} ilustra el lugar que ocupa el sistema desarrollado dentro de una sesión de entrenamiento típica, con el jugador, la cancha y la máquina como elementos principales del contexto de uso.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[scale=.37]{./Figures/questionMark.png}
-	\caption{Ubicación de la máquina lanzapelotas dentro de una sesión de entrenamiento de tenis (imagen ilustrativa a reemplazar).}
+	\includegraphics[width=\linewidth,keepaspectratio]{./Figures/introduccion.png}
+	\caption{Ubicación de la máquina lanzapelotas dentro de una sesión de entrenamiento de tenis.}
 	\label{fig:contextoGeneral}
 \end{figure}
 
@@ -57,25 +57,29 @@ En el ámbito académico y de proyectos de código abierto existen numerosos des
 
 De este relevamiento se desprende que el espacio no cubierto de manera satisfactoria por las soluciones existentes es el de una plataforma portátil, de desarrollo y mantenimiento locales, con un costo intermedio entre un prototipo académico de validación y una máquina comercial de gama alta. Se busca, además, una arquitectura de firmware abierta que permita evolucionar hacia funciones más avanzadas, como la incorporación futura de visión por cámara y de inteligencia artificial embebida. La tabla~\ref{tab:comparativaEstadoArte} resume las características principales relevadas para distintas categorías de soluciones existentes frente a la propuesta de este trabajo.
 
-\begin{table}[htbp]
+\begin{sidewaystable}[p]
 	\centering
-	\caption{Comparación de soluciones existentes para el lanzamiento asistido de pelotas de tenis (tabla a completar con los valores relevados para cada solución concreta).}
+	\caption{Comparación de soluciones existentes para el lanzamiento asistido de pelotas de tenis.}
 	\label{tab:comparativaEstadoArte}
-	\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+	\scriptsize
+	\setlength{\tabcolsep}{3pt}
+	\renewcommand{\arraystretch}{1.2}
+	\begin{tabularx}{\textheight}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
 		\hline
-		\tabhead{Solución} & \tabhead{Controlador} & \tabhead{Memoria} & \tabhead{Conectividad} & \tabhead{Costo aprox.} \\
+		\tabhead{Solución} & \tabhead{Controlador} & \tabhead{Memoria} & \tabhead{Conectividad} & \tabhead{Tamaño} & \tabhead{Peso} & \tabhead{Tipo de batería} & \tabhead{Autonomía} & \tabhead{Costo aprox.} \\
 		\hline
-		Máquina comercial gama media & [Completar] & [Completar] & [Completar] & [Completar] \\
+		Máquina comercial gama media (WEIMILOR B0DS849RJL) & No informado por el vendedor & No informada & Control remoto y aplicación móvil & 36 cm \(\times\) 30 cm \(\times\) 50 cm & 10 kg & Litio extraíble, 24 V / 5 Ah & 2 a 4 h & \(\sim\)\$5,7 millones ARS \\
 		\hline
-		Máquina comercial gama alta & [Completar] & [Completar] & [Completar] & [Completar] \\
+		Máquina comercial gama alta (MINEYCHCEY PT-Smart PRO Fessional) & No informado por el vendedor & No informada; incluye 12 modos preprogramados y 28 puntos de aterrizaje & Aplicación móvil, reloj inteligente y control remoto & 43,18 cm de diámetro informado & 15 kg & Litio, 25,6 V / 6 Ah & 4 a 6 h & \(\sim\)\$11,2 millones ARS \\
 		\hline
-		Prototipo académico / DIY & [Completar] & [Completar] & [Completar] & [Completar] \\
+		Prototipo académico (Noguera Cundar et al., 2022) & Arduino & No informada & Control remoto por radio & No informado & No informado & LiPo recargable de 5000 mAh & No informada & No informado \\
 		\hline
-		Prototipo propio (este trabajo) & Microcontrolador ESP32-S3 & Memoria flash no volátil interna & Bluetooth (en desarrollo) & Costo de componentes acotado \\
+		Prototipo propio (este trabajo) & Microcontrolador ESP32-S3 & Juegos programables en memoria por el usuario & Bluetooth (en desarrollo) & 40 cm de diámetro aprox. & Menor que 10 kg & Baterías de litio intercambiables y extraíbles de 18 V & No determinada experimentalmente & Costo asociado a componentes impresos en 3D, motores y electrónica de uso general \\
 		\hline
 	\end{tabularx}
-\end{table}
+\end{sidewaystable}
 
+\newpage
 \section{Objetivos del trabajo}
 \label{sec:objetivos}
 

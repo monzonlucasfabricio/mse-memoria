@@ -23,13 +23,14 @@
 \usepackage[T1]{fontenc}    % Codificación de salida para caracteres especiales
 \usepackage{graphicx}       % Manejo de gráficos
 \usepackage{tabularx}       % Tablas con columnas que ajustan el ancho al margen
+\usepackage{rotating}       % Tablas y figuras rotadas
 \usepackage{eso-pic}        % Permite agregar fondos
 \usepackage{hyperref}       % Manejo de hipervínculos y marcadores
 
 % Redefinición de caracteres problemáticos en marcadores
 \hypersetup{
-    pdftitle={Título del Documento},
-    pdfauthor={Autor del Documento},
+    pdftitle={Desarrollo de un prototipo funcional de máquina lanzapelotas para entrenamiento técnico en tenis},
+    pdfauthor={Lucas Fabricio Monzón Languasco},
     pdfkeywords={Sistemas Embebidos, Internet de las Cosas, Inteligencia Artificial},
     pdfstartview={FitH},
     unicode=true,
@@ -52,8 +53,8 @@
 
 
 % Definir comandos requeridos por la clase
-\newcommand{\degreename}{Maestría en Ciencias} % Cambia según tu título
-\newcommand{\univname}{Universidad Nacional de Ejemplo} % Cambia según tu universidad
+\newcommand{\degreename}{Maestría en Sistemas Embebidos}
+\newcommand{\univname}{}
 \newcommand{\keywordnames}{Palabras clave:}
 %----------------------------------------------------------------------------------------
 % Documento Principal
@@ -62,7 +63,7 @@
 \begin{document}
 
 % Configuración de la portada
-\posgrado{Carrera / Maestría}
+\posgrado{Maestría en Sistemas Embebidos}
 \keywords{Sistemas Embebidos, Internet de las Cosas, Inteligencia Artificial}
 
 % Incluir la portada desde un archivo separado
@@ -115,10 +116,10 @@ Esta sección es para agradecimientos personales y es totalmente \textbf{OPCIONA
 
 % Incluir capítulos desde archivos separados
 \include{Chapters/Chapter1}
-\include{Chapters/Chapter2}
-\include{Chapters/Chapter3}
-\include{Chapters/Chapter4}
-\include{Chapters/Chapter5}
+%\include{Chapters/Chapter2}
+%\include{Chapters/Chapter3}
+%\include{Chapters/Chapter4}
+%\include{Chapters/Chapter5}
 
 %----------------------------------------------------------------------------------------
 % Apéndices
